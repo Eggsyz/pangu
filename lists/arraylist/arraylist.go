@@ -51,6 +51,12 @@ func (list *List) Remove(index int) {
 
 // 暂时没有发现很好的办法，只能双重for循环
 func (list *List) Containers(values ...interface{}) bool {
+	if len(values) == 0 {
+		return true
+	}
+	if list.size == 0 {
+		return false
+	}
 	for _, value := range values {
 		var flag bool
 		for _, element := range list.elements {

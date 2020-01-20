@@ -1,6 +1,7 @@
 package arraylist
 
 import (
+	"fmt"
 	"github.com/Eggsyz/pangu/utils"
 	"github.com/stretchr/testify/assert"
 	"testing"
@@ -61,5 +62,20 @@ func TestList_New(t *testing.T) {
 	list.Set(0, 1)
 	values = list.Values()
 	assert.True(t, values[0] == 1, "excepting 1 but found %v", values[0])
+}
 
+func TestList_Iterator(t *testing.T) {
+	list := New()
+	list.Add(0, 1, 2, 3)
+	iterator := list.Iterator()
+	var i = 0
+	for iterator.HasNext() {
+		v := iterator.Next()
+		assert.True(t, v == i, "excepting i but found %v", v)
+		i++
+		if v == 3 {
+			iterator.Remove()
+			fmt.Println(list.Values())
+		}
+	}
 }
