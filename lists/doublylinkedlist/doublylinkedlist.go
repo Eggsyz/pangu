@@ -1,15 +1,14 @@
-package linkedlist
+package doublylinkedlist
 
 import "github.com/Eggsyz/pangu/utils"
 
 /**
  * @Author: eggsy
- * @Description: 单向链表
- * @File:  singlelinkedlist
+ * @Description:
+ * @File:  doublylinkedlist
  * @Version: 1.0.0
- * @Date: 2020-01-17 19:11
+ * @Date: 2020-01-20 14:14
  */
-
 type List struct {
 }
 
